@@ -3,6 +3,24 @@ The first step is using composer to install the package and automatically update
 composer require jsroute/javascriptroute 
 ```
 #### Using function route in javascript
+```bash 
+routes/web.php 
+```
+```php
+<?php
+Route::get("list",function(){
+    return view("test");
+})->name('list');
+Route::get("detail/{id}",function(){
+    return view("test");
+})->name('detail');
+Route::get("byid/{id}/{taxcd}",function(){
+    return view("test");
+})->>name('byid');
+```
+```bash 
+resources/views/test.blade.php
+```
 ```html <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,17 +33,20 @@ composer require jsroute/javascriptroute
 <body>
     <script>
         console.log(route("your name route"));
-        //Using a routing function that passes parameter
-        // route get by id 
-        Route::get("list","TestController@ByID")->name('list');
-        console.log(route("list"));
-        // http://domain.com/list
-        Route::get("detail/{id}","TestController@Detail")->name('detail');
-        console.log(route("detail","abcdef"));
-        // http://domain.com/detail/abcdef
-        Route::get("byid/{id}/{taxcd}","TestController@ByID")->name('byid');
-        console.log(route("byid",[1,"123456"]));
-        // http://domain.com/byid/1/123456
+        //Route::get("list",function(){
+        //    return view("test");
+        //})->name('list');
+        console.log(route("list")); // http://domain.com/list
+        ////////////////////////////////////////////////////////////////////////////////
+        // Using a routing function that passes parameter
+        // Route::get("detail/{id}",function(){
+        //    return view("test");
+        //})->name('detail');
+        console.log(route("detail","abcdef"));// http://domain.com/detail/abcdef
+        // Route::get("byid/{id}/{taxcd}",function(){
+        //    return view("test");
+        //})->>name('byid');
+        console.log(route("byid",[1,"123456"])); //http://domain.com/byid/1/123456
     </script>
 </body>
 </html>
