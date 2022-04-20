@@ -26,7 +26,6 @@ Route::get("javascript-route.min.js",function(){
         }
     });
     header('Content-Type: text/javascript');
-    echo("// Author : dinhvanlanhi t\n");
     echo("// Email : dinhvanlanhit.it@gmail.com \n");
     echo("// Website : dinhvanlanh.com \n");
     echo("// Github : https://github.com/dinhvanlanhit/javascriptroute \n");
