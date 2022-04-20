@@ -37,16 +37,29 @@ resources/views/test.blade.php
         //    return view("test");
         //})->name('list');
         console.log(route("list")); // http://domain.com/list
+        console.log(route("list",{
+            category:1,
+            type:"test"
+        })); // http://domain.com/list?category=1&type=test
         ////////////////////////////////////////////////////////////////////////////////
         // Using a routing function that passes parameter
         // Route::get("detail/{id}",function(){
         //    return view("test");
         //})->name('detail');
         console.log(route("detail","abcdef"));// http://domain.com/detail/abcdef
+        // parameter and queryString
+        console.log(route("detail","abcdef",{
+            name:"dev"
+        }));// http://domain.com/detail/abcdef?name=dev
+        ////////////////////////////////////////////////////////////////////////////////
         // Route::get("byid/{id}/{taxcd}",function(){
         //    return view("test");
         //})->>name('byid');
         console.log(route("byid",[1,"123456"])); //http://domain.com/byid/1/123456
+         // parameter [] and queryString
+        console.log(route("byid",[1,"123456"],{
+            name:"dev"
+        })); //http://domain.com/byid/1/123456?name=dev
     </script>
 </body>
 </html>
