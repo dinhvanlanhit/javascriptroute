@@ -21,10 +21,10 @@ composer require jsroute/javascriptroute
         console.log(route("list"));
         // http://domain.com/list
         Route::get("detail/{id}","TestController@Detail")->name('detail');
-        console.log(route("detail","id => value "));
-        // http://domain.com/list
+        console.log(route("detail","abcdef"));
+        // http://domain.com/detail/abcdef
         Route::get("byid/{id}/{taxcd}","TestController@ByID")->name('byid');
-        console.log(route("byid",[1,123456]));
+        console.log(route("byid",[1,"123456"]));
         // http://domain.com/byid/1/123456
     </script>
 </body>
