@@ -1,0 +1,30 @@
+{
+    "name": "jsroute/javascriptroute",
+    "description": "Javascript route",
+    "type": "library",
+    "require": {
+        "php": ">=5.6",
+        "illuminate/support": ">=5.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dinhvanlanhit",
+            "email": "dinhvanlanh.it@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "Jsroute\\Javascriptroute\\": "src/"
+        },
+        "files": ["src/helper.php"]
+      },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Jsroute\\Javascriptroute\\JavascriptrouteServiceProvider"
+          ]
+        }
+      },
+    "minimum-stability": "dev"
+}

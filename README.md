@@ -1,0 +1,2 @@
+# javascriptroute
+ Route javascript laravel
