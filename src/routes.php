@@ -27,5 +27,5 @@ Route::get("javascript-route.min.js",function(){
     });
     header('Content-Type: text/javascript');
     echo("var javascriptroutes = ").json_encode($routes).";\n";
-    echo(file_get_contents(base_path("javascriptroute/src/script/index.js")));
+    echo(file_get_contents((__DIR__."/script/index.js")));
 })->name("javascript-route.min.js");
