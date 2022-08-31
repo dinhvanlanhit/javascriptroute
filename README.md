@@ -2,6 +2,10 @@ The first step is using composer to install the package and automatically update
 ```bash 
 composer require jsroute/javascriptroute 
 ```
+```bash
+composer dump-autoload
+```
+
 #### Using function route in javascript
 ```bash 
 routes/web.php 
